@@ -3,6 +3,8 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +27,7 @@ public class Tarifa {
 	
 	private LocalDateTime saida;
 	
+	@Enumerated(EnumType.STRING)
 	private TipoTarifa tipoTarifa;
 	
 }

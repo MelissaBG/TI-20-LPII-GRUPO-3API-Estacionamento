@@ -16,13 +16,13 @@ public class Assinante {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "Nome")
+	@Column(name = "nome")
 	private String nome;
 	
 	@Column(name = "CPF")
 	private String cpf;
 	
-	@Column(name = "Telefone")
+	@Column(name = "telefone")
 	private String telefone;
 	
 	

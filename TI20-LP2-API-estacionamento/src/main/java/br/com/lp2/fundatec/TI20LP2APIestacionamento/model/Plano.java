@@ -2,7 +2,6 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +18,6 @@ public class Plano {
 	
 	private Assinante assinante;
 	
-	@Column(name = "Valor a pagar")
+	@Column(name = "valor")
 	private Double valor;
 }
