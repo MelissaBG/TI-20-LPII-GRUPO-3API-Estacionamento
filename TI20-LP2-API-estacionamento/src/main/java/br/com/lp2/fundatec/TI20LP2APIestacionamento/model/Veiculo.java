@@ -13,9 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.TipoVeiculo;
-import lombok.Data;
 
-@Data
 @Entity
 public class Veiculo {
 	
@@ -27,7 +25,7 @@ public class Veiculo {
 	@Enumerated(EnumType.STRING)
 	private TipoVeiculo tipoVeiculo;
 	
-	@Column(name = "placa")
+	@Column(name = "placa", length = 7, unique = true, nullable = false)
 	private String placa;
 	
 	

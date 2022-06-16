@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 @Entity
 public class Assinante {
@@ -28,6 +30,10 @@ public class Assinante {
 	
 	@Column(name = "telefone")
 	private String telefone;
+
+	@Column(name = "crédito")
+	private BigDecimal credito;
+
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_endereco", referencedColumnName = "id")
