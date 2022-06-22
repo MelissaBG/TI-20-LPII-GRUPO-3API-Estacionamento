@@ -25,7 +25,7 @@ public class Endereco {
 	@Column(nullable = false, name = "cidade")
 	private String cidade;
 	
-	@Column(nullablr = false, name = "bairro")
+	@Column(nullable = false = false, name = "bairro")
 	private String bairro;
 	
 	@Column(nullable= false,  name = "CEP")
@@ -37,6 +37,6 @@ public class Endereco {
 	@Column(nullable= false, name = "numero")
 	private Integer numero;
 	
-	@Column(nulllable= false, name = "complemento")
+	@Column(nullable= false, name = "complemento")
 	private String complemento;
 }
