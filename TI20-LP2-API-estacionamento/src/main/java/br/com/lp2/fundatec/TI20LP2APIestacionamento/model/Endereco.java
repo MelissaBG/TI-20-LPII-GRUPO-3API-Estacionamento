@@ -22,21 +22,21 @@ public class Endereco {
 	@Enumerated(EnumType.STRING)
 	private UF uf;
 	
-	@Column(name = "cidade")
+	@Column(nullable = false, name = "cidade")
 	private String cidade;
 	
-	@Column(name = "bairro")
+	@Column(nullablr = false, name = "bairro")
 	private String bairro;
 	
-	@Column(name = "CEP")
+	@Column(nullable= false,  name = "CEP")
 	private String cep;
 	
-	@Column(name = "rua")
+	@Column(nullable = false, name = "rua")
 	private String rua;
 	
-	@Column(name = "numero")
+	@Column(nullable= false, name = "numero")
 	private Integer numero;
 	
-	@Column(name = "complemento")
+	@Column(nulllable= false, name = "complemento")
 	private String complemento;
 }

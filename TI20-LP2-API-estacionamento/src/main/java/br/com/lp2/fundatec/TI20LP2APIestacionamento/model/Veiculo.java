@@ -23,11 +23,11 @@ public class Veiculo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "tipo_veiculo")
+	@Column(nullable = false, name = "tipo_veiculo")
 	@Enumerated(EnumType.STRING)
 	private TipoVeiculo tipoVeiculo;
 	
-	@Column(name = "placa")
+	@Column(nullable= false, name = "placa")
 	private String placa;
 	
 	

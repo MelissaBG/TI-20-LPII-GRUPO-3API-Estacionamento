@@ -28,6 +28,9 @@ public class Assinante {
 	
 	@Column(name = "telefone")
 	private String telefone;
+
+	@Column (name = "Crédito")
+	private  Credito valorCredito;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_endereco", referencedColumnName = "id")
