@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VeiculoRepository extends JpaRepository<Veiculo, Integer> {
+    Optional <Veiculo> findByPlaca (String placa);
+
+    Optional <Veiculo> findByAssinante (Assinante assinante);
 }
