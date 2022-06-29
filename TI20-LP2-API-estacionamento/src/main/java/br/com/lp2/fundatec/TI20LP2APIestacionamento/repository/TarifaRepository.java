@@ -9,4 +9,7 @@ import java.util.Optional;
 @Repository
 public interface TarifaRepository extends JpaRepository<Tarifa, Double> {
 
+    Optional<Tarifa> calcularTarifa(Tarifa valor);
+
+
 }
