@@ -1,5 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.service;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.TipoTarifa;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.TipoVeiculo;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Tarifa;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.TarifaRepository;
 import org.springframework.stereotype.Service;
@@ -15,13 +17,24 @@ public class TarifaService {
         this.tarifaRepository = tarifaRepository;
     }
 
-    public Optional<Tarifa> calcularTarifa(Tarifa valor) {
-        /*
-        valor.setValor()
-        verificarQualConstant
-        return valor * constant.getConstant
-        */
-        return null;
+    public Optional<Tarifa> findByTipoTarifaAndTipoVeiculo(TipoTarifa tipoTarifa, TipoVeiculo tipoVeiculo) {
+        return tarifaRepository.findByTipoTarifaAndTipoVeiculo(tipoTarifa, tipoVeiculo);
+    }
+
+    public Iterable<Tarifa> findAll(){
+        return tarifaRepository.findAll();
+    }
+
+    public Tarifa salvar(Tarifa tarifa) {
+        return tarifaRepository.save(tarifa);
+    }
+
+    public Tarifa update(Tarifa tarifa) {
+        return tarifaRepository.save(tarifa);
+    }
+
+    public void delete(Integer id) {
+        tarifaRepository.deleteById(id);
     }
 
 
