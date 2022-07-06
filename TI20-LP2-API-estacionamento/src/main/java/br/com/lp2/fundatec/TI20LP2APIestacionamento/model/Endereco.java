@@ -1,15 +1,8 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.UF;
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,8 +12,8 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Enumerated(EnumType.STRING)
-	private UF uf;
+	@Column(nullable = false, name = "UF")
+	private String uf;
 	
 	@Column(nullable = false, name = "cidade")
 	private String cidade;
