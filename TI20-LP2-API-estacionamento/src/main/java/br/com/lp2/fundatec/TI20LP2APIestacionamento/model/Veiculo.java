@@ -1,25 +1,15 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.TipoVeiculo;
+
+import javax.persistence.*;
 
 @Entity
 public class Veiculo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id_veiculo;
 	
 	@Column(nullable = false, name = "tipo_veiculo")
 	@Enumerated(EnumType.STRING)
