@@ -20,9 +20,9 @@ public class Conta {
     @GeneratedValue
     private Long id_conta;
     @Column(name = "dth_entrada", nullable = false)
-    private LocalDateTime dth_entrada;
+    private LocalDateTime entrada;
     @Column(name = "dth_saida", nullable = false)
-    private LocalDateTime dth_saida;
+    private LocalDateTime saida;
 
     @ManyToOne
     @JoinColumn(name = "id_veiculo", nullable = false)
@@ -37,9 +37,11 @@ public class Conta {
         return ChronoUnit.MINUTES.between(entrada, saida);
     }
     public long getHorasExcedentes(){
+
         return (getTempoEmMinutos() - 1) / 60;
     }
     public TipoTarifa getTipoTarifa(){
+
         return TipoTarifa.obterPorTempoEmMinutos(getTempoEmMinutos());
     }
     public void aplicarDescontoParaAssinantes(){
@@ -50,6 +52,6 @@ public class Conta {
         }
     }
     public boolean estaEncerrada(){
-        return valor != null;
+    return valor != null;
     }
 }

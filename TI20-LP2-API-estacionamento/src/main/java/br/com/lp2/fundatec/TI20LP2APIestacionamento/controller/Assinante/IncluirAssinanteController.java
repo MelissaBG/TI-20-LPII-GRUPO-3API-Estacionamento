@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping{"/api/assinante"}
 public class IncluirAssinanteController {
     @PostMapping
-    ResponseEntity <AssinanteResponseDTO> incluir(
-        @Valid @RequestBody AssinanteRequestDTO assinanteRequestDTO);
-    }
+    ResponseEntity<AssinanteResponseDTO> incluir(
+            @RequestBody AssinanteRequestDTO assinanteRequestDTO)
+}
 }

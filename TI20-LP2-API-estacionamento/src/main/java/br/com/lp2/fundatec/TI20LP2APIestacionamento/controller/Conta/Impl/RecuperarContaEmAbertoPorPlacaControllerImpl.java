@@ -1,10 +1,11 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Conta.Impl;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Conta.RecuperarContaPorPlacaController;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.ConverterResponse.ContaResponseConverter;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Conta.RecuperarContaEmAbertoPorPlacaController;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.Refatorado.ContaResponseDTO;
 import org.springframework.http.ResponseEntity;
 
-public class RecuperarContaEmAbertoPorPlacaControllerImpl implements RecuperarContaPorPlacaController {
+public class RecuperarContaEmAbertoPorPlacaControllerImpl implements RecuperarContaEmAbertoPorPlacaController {
     private final RecuperarContaPorPlacaService service;
     private final ContaResponseConverter.responseConverter;
 

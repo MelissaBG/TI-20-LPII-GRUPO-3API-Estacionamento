@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface ContaRepository extends JpaRepository<Conta, Integer>{
     Optional<Conta> findByVeiculo (Veiculo veiculo);
+
+    Optional <Conta> findByPlaca(String placa);
 }

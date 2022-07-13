@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("")
-public interface RecuperarContaPorPlacaController {
+public interface RecuperarContaEmAbertoPorPlacaController {
     @GetMapping("/em-aberto")
     ResponseEntity <ContaResponseDTO> recuperar(@PathVariable("placa") String placa);
 }

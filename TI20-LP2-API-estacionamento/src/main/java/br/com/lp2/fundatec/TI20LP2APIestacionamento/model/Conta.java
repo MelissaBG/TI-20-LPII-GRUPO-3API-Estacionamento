@@ -19,9 +19,9 @@ public class Conta {
 	@JoinColumn(name = "veiculo_id")
 	private Veiculo veiculo;
 	
-	private LocalDateTime dth_entrada;
+	private LocalDateTime entrada;
 	
-	private LocalDateTime dth_saida;
+	private LocalDateTime saida;
 
 	private Double valor;
 	

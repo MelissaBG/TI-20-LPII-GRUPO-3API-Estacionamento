@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface ContaRepository extends JpaRepository <Conta, Long> {
     //Retorna uma lista de contas em aberto para a placa passada como paramentro
-    List <Conta> findByVeiculoPlacaAndSaidaIsNullAnndValorIsNull(String placa);
+    List <Conta> findByVeiculoPlaca(String placa);
 }

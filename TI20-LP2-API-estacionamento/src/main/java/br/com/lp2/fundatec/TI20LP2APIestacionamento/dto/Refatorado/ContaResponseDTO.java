@@ -1,10 +1,11 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.Refatorado;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import lombok.Builder;
 
-public class ContaResponseDTO implements ResponseDTO{
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+@Builder
+public class ContaResponseDTO {
     private Long id;
     private String placa;
     private LocalDateTime entrada;

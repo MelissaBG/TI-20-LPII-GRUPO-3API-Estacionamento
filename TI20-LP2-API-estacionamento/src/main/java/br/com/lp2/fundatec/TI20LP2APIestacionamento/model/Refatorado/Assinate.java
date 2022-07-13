@@ -18,7 +18,7 @@ public class Assinate {
     private LocalDate data_nascimento;
     @Column(nullable = false, length = 100)
     private String nome;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_endereco")
     //FK
     private Endereco endereco;
