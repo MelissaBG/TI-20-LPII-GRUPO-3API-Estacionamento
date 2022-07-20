@@ -2,7 +2,7 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Assinante.impl;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Assinante.IncluirAssinanteController;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.Refatorado.AssinanteResponseDTO;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Assinante;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

@@ -1,10 +1,9 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.TipoVeiculo;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Assinante;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 public class Veiculo {
     @Id

@@ -1,6 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.controller;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Assinante;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.service.AssinanteService;
 import org.springframework.web.bind.annotation.*;
 
