@@ -3,7 +3,6 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.service.Refatorado;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Veiculo.BuscarVeiculoPorPlacaController;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Conta;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Veiculo
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.ContaRepository;
 
 import java.time.LocalDateTime;
 

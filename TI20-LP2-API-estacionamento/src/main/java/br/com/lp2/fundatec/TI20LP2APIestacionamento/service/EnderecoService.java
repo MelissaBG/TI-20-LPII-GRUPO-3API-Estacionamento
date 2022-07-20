@@ -5,8 +5,6 @@ import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Endereco;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.EnderecoRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class EnderecoService {
 

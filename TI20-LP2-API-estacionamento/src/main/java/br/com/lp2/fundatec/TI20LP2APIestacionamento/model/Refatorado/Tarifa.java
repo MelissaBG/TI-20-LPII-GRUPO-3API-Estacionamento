@@ -8,4 +8,7 @@ public class Tarifa {
     TipoVeiculo;
     TipoTarifa;
     valor;
+    public Double retornarValor(Tarifa tarifa){
+        return tarifa.getValor();
+    }
 }

@@ -4,8 +4,7 @@ import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Conta;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Tarifa;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.AssinanteRepository;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.Refatorado.ContaRepository;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.TarifaRepository;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.ContaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

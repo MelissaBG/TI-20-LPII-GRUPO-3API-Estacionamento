@@ -19,7 +19,10 @@ public class Tarifa {
     @Enumerated(EnumType.STRING)
     private TipoVeiculo tipoVeiculo;
 
-    //@NotNull(message = "É obrigatorio cadastrar um valor.")
     @Column(name = "valor")
     private Double valor;
+
+    public Double retornarValor(Tarifa tarifa){
+        return tarifa.getValor();
+    }
 }

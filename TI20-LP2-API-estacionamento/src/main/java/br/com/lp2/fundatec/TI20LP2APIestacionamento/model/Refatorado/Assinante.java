@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Assinate {
+public class Assinante {
     @Id
     @GeneratedValue
     private Long id_assinante;

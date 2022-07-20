@@ -1,7 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.service.Refatorado;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Conta;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.ContaRepository;
 
 import java.util.List;
 

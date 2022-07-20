@@ -15,6 +15,10 @@ public class Veiculo {
 	@Enumerated(EnumType.STRING)
 	private TipoVeiculo tipoVeiculo;
 
+	public TipoVeiculo EhTipoVeiculo() {
+		return tipoVeiculo;
+	}
+
 	@Column(name = "placa", length = 7, unique = true, nullable = false)
 	private String placa;
 	
@@ -22,7 +26,11 @@ public class Veiculo {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(nullable = true, name = "id_assinante", referencedColumnName = "id")
 	private Assinante assinante;
+
+	public boolean possuiAssinatura (){
+		return assinante != null;
+	}
 	
-	@Column(name = "cor")
-	private String cor;
+	@Column(name = "conta")
+	private Conta conta;
 }
