@@ -2,7 +2,7 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Conta.Impl;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.controller.Conta.EncerrarContaPorPlacaController;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.Refatorado.ContaResponseDTO;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Conta;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Conta;
 import org.springframework.http.ResponseEntity;
 
 public class EncerrarContaPorPlacaControllerImpl implements EncerrarContaPorPlacaController {

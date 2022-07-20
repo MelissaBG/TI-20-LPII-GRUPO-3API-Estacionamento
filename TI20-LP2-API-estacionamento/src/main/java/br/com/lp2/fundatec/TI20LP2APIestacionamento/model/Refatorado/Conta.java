@@ -1,6 +1,5 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Tarifa;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

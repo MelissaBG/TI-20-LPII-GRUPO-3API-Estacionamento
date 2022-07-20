@@ -1,12 +1,9 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.controller;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.EnderecoDTO;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Endereco;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.service.EnderecoService;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Endereco;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.EnderecoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 public class EnderecoController {
     private final EnderecoService service;

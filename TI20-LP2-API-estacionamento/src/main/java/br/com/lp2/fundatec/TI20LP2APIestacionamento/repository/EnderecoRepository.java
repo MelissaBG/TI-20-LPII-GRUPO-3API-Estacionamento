@@ -1,6 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.repository;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Endereco;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

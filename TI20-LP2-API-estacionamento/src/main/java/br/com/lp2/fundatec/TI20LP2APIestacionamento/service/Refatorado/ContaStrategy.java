@@ -1,7 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.service.Refatorado;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Conta;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Tarifa;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Conta;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Tarifa;
 
 import java.math.BigDecimal;
 

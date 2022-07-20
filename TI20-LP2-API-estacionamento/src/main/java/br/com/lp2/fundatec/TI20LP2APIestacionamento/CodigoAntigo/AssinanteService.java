@@ -1,4 +1,4 @@
-package br.com.lp2.fundatec.TI20LP2APIestacionamento.service;
+package br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Assinante;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.AssinanteRepository;

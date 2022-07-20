@@ -1,6 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Endereco;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Endereco;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

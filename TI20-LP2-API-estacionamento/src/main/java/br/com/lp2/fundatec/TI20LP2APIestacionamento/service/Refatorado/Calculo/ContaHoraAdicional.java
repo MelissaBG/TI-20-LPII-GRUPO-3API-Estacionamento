@@ -1,6 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.service.Refatorado.Calculo;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Conta;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Conta;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Enums.TipoTarifa;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Enums.TipoVeiculo;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Tarifa;

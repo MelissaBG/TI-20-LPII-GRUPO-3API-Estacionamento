@@ -1,7 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.repository;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Conta;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Veiculo;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Veiculo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
