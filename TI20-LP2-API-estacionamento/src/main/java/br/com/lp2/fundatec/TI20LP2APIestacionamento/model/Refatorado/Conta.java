@@ -1,5 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Tarifa;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Enums.TipoTarifa;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -54,5 +56,7 @@ public class Conta {
     public boolean estaEncerrada(){
     return valor != null;
     }
-
+    public boolean contaSeEhDoTipoTarifa(Tarifa tarifa){
+    return
+    }
 }

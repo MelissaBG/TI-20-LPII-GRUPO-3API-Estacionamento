@@ -1,10 +1,13 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.service.Refatorado;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Assinante;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Conta;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Tarifa;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Veiculo;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.AssinanteRepository;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.ContaRepository;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.TarifaRepository;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.service.Refatorado.ContaStrategy;
 import org.springframework.stereotype.Service;
 
 import java.io.NotActiveException;
@@ -18,14 +21,24 @@ public class ContaService {
     private final TarifaRepository tarifaRepository;
     private final AssinanteService assinanteService;
     private final List <ContaStrategy> contaStrategies;
+    private final ContaStrategy contaStrategy;
     private final VeiculoService veiculoService;
+    private final AssinanteRepository assinanteRepository;
 
     public ContaService(ContaRepository contaRepository, VeiculoService veiculoService,
-                        TarifaRepository tarifaRepository, AssinanteService assinanteService){
+                        TarifaRepository tarifaRepository, AssinanteService assinanteService, ContaStrategy contaStrategy){
         this.contaRepository = contaRepository;
         this.veiculoService = veiculoService;
         this.assinanteService = assinanteService;
         this.tarifaRepository = tarifaRepository;
+        this.contaStrategy = contaStrategy;
+    }
+    public Conta encerrar (Long id) {
+        Conta conta = recuperarContaParaEncerrar(id);
+        Tarifa tarifa = recuperarTarifa(conta);
+        calcularValorConta(conta, tarifa);
+        aplicarDescontoParaAssinantes(conta);
+        return contaRepository.save(conta);
     }
 
     public Conta recuperar(String placa){
@@ -59,4 +72,18 @@ public class ContaService {
     private Tarifa recuperarTarifa(Conta conta){
         return tarifaRepository.findByTipoTarifaAndTipoVeiculo(conta.getTipoTarifa(), conta.getVeiculo().getTipoVeiculo());
     }
+    private void calcularValorConta(br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Conta conta, br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Tarifa tarifa){
+        ContaStrategy contaStrategy = contaStrategies
+                .stream()
+                .filter(strategy -> strategy.contaSeEhDoTipoTarifa()
+                .findFirst()
+                .orElseThrow());
+        contaStrategy.aplicarValor(conta, tarifa);
+    }
+    private void debitarValorContaDoCreditoEmContaAssinante(Conta conta){
+        Assinante assinante = conta.getVeiculo().getAssinante();
+        assinante.debitarCredito(conta.getValor().doubleValue());
+        assinanteRepository.save(assinante);
+    }
+
 }

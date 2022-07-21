@@ -5,6 +5,7 @@ import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Conta;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Tarifa;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.AssinanteRepository;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.ContaRepository;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.TarifaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,17 +20,15 @@ public class EncerrarContaService {
     private final TarifaRepository tarifaRepository;
     private final AssinanteRepository assinanteRepository;
     private final List <ContaStrategy> contaStrategies;
-    private final EncerraContaValidation validation;
 
     public Conta encerrar (Long id) {
         Conta conta = recuperarContaParaEncerrar(id);
-        validation.validar(conta);
         Tarifa tarifa = recuperarTarifa(conta);
         calcularValorConta(conta, tarifa);
-        aplicarDescontoParaAssinates(conta);
+        aplicarDescontoParaAssinantes(conta);
         return contaRepository.save(conta);
     }
-    private Conta recuperarContaParaEncerrar(Long, id){
+    private Conta recuperarContaParaEncerrar(Long id){
         Conta conta = contaRepository.findById(id).orElseThrow(NotActiveException::new);
         conta.setDth_saida(LocalDateTime.now());
         return conta;
@@ -40,9 +39,9 @@ public class EncerrarContaService {
     private void calcularValorConta(Conta conta, Tarifa tarifa){
         ContaStrategy contaStrategy = contaStrategies
                 .stream()
-                .filter(strategy -> strategy.contaSeEhDoTipoDeTarifa(tarifa))
+                .filter(strategy -> strategy.
                 .findFirst()
-                .orElseThriw());
+                .orElseThrow());
         contaStrategy.aplicarValor(conta, tarifa);
     }
     private void debitarValorContaDoCreditoEmContaAssinante(Conta conta){
