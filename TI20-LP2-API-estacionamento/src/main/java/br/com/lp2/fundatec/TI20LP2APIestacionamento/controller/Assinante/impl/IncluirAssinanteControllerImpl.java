@@ -17,6 +17,6 @@ public class IncluirAssinanteControllerImpl implements IncluirAssinanteControlle
         Assinante assinante = responseConverter.convert(assinanteRequestDTO);
         Assinante assinanteIncluido = service.incluir(assinante);
         AssinanteResponseDTO assinanteResponseDTO = responseConverter.convert(assinante);
-        return ResponseEntity.status(HttpStatus.CREATED).body(assinanteResponseDTO)
+        return ResponseEntity.status(HttpStatus.CREATED).body(assinanteResponseDTO);
     }
 }

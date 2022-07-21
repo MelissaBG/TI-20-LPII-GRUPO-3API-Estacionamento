@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface VeiculoRepository extends JpaRepository<Veiculo, Integer> {
-    Optional <Veiculo> findByPlaca (String placa);
+    br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Veiculo findByPlaca (String placa);
 
     Optional <Veiculo> findByAssinante (Assinante assinante);
 }

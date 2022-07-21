@@ -1,11 +1,16 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.enums.TipoVeiculo;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Assinante;
+
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Assinante;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Enums.TipoVeiculo;
+import lombok.Data;
 
 import javax.persistence.*;
 
+@Entity
+@Data
 public class Veiculo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_veiculo;
@@ -26,15 +31,12 @@ public class Veiculo {
     @JoinColumn(nullable = true, name = "id_assinante", referencedColumnName = "id")
     private Assinante assinante;
 
-    public boolean possuiAssinatura (){
-        return assinante != null;
-    }
 
     @Column(name = "conta")
     private Conta conta;
-    private  boolean assinante;
-    public boolean temAssinante(assinante) {
-        if ( assinante == true) {
+    private  boolean isAssinante;
+    public boolean temAssinante(Assinante assinante) {
+        if ( isAssinante == true) {
             return true;
         }
         return false;

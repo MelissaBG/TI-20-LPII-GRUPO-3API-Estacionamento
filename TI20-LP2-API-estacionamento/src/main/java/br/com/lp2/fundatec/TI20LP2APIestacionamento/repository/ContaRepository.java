@@ -15,4 +15,6 @@ public interface ContaRepository extends JpaRepository <Conta, Long> {
 
     Optional<Conta> findByVeiculo (Veiculo veiculo);
 
+    Optional<Conta> findById (Long id);
+
 }
