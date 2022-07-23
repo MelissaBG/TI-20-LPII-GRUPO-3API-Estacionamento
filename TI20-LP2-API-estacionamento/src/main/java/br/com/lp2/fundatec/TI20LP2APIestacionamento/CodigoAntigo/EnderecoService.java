@@ -1,6 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.repository.EnderecoRepository;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.SegundaVersao.repository.EnderecoRepository;
 import org.springframework.stereotype.Service;
 
 @Service

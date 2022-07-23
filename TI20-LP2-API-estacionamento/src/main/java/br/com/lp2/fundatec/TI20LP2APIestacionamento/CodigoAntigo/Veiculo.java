@@ -1,7 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo;
 
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Refatorado.Enums.TipoVeiculo;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.SegundaVersao.Refatorado.Enums.TipoVeiculo;
 
 import javax.persistence.*;
 
