@@ -2,7 +2,6 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.Model;
 
 //import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Endereco;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Endereco;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums.TipoCliente;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -31,6 +30,10 @@ public class Assinante {
     @Column(nullable = false, length = 11)
     private String cpf;
 
+    @Column(nullable = false, name = "Veiculo")
+    @OneToOne
+    private Veiculo veiculo;
+
     @Column(nullable = false, name = "Total_do_credito")
     private BigDecimal creditoDiponivel;
 
@@ -41,4 +44,16 @@ public class Assinante {
     @OneToOne()
     @JoinColumn(name = "enderereco")
     private Endereco endereco;
+
+    public Assinante(Long idAssinante, String nome, String cpf,
+                     Veiculo veiculo, BigDecimal creditoDiponivel,
+                     TipoCliente tipoCliente, Endereco endereco) {
+        this.idAssinante = idAssinante;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.veiculo = veiculo;
+        this.creditoDiponivel = creditoDiponivel;
+        this.tipoCliente = tipoCliente;
+        this.endereco = endereco;
+    }
 }

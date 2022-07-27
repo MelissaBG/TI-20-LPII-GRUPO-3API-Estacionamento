@@ -31,4 +31,8 @@ public class TarifaService {
         tarifa.setValor(valor);
         return tarifaRepository.save(tarifa);
     }
+
+    public Tarifa findByTipoTarifaAndTipoVeiculo(TempoTipoTarifa tempoTipoTarifa, TipoVeiculo tipoVeiculo) {
+        return null;
+    }
 }

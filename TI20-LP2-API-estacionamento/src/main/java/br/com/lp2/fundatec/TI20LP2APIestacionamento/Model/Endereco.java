@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_endereco;
+    private Long idEndereco;
 
     @Column(nullable = false, name = "LOGRADOURO")
     private String logradouro;

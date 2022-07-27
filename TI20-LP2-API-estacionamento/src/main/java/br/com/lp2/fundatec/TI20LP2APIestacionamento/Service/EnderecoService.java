@@ -11,7 +11,7 @@ public class EnderecoService {
     @Autowired
     EnderecoRepository enderecoRepository;
 
-    private EnderecoRepository salvarEndereco(Endereco endereco){
+    private  salvarEndereco(){
         Endereco endereco =enderecoRepository.save(endereco);
         return
         //Duvida: Está certo?

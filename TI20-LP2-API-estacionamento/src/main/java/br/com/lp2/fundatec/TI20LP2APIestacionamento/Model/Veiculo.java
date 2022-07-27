@@ -1,5 +1,6 @@
-package br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums;
+package br.com.lp2.fundatec.TI20LP2APIestacionamento.Model;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums.TipoVeiculo;
 import lombok.Data;
 
 import javax.persistence.*;
