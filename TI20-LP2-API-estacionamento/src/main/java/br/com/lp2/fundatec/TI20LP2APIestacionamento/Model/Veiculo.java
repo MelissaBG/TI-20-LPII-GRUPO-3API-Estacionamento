@@ -2,11 +2,15 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.Model;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums.TipoVeiculo;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@Getter
+@Setter
 @Table(name = "VEICULO")
 public class Veiculo {
     @Id

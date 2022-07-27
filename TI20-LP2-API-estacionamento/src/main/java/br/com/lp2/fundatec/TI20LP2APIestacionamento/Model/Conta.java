@@ -3,10 +3,7 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.Model;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums.Status;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums.TipoCliente;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.Model.Enums.TipoVeiculo;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -14,8 +11,10 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table
+@Table(name = "tbl_conta")
 @Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Conta {
