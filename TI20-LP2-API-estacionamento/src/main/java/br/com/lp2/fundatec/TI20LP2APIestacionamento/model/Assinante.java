@@ -2,7 +2,7 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.model;
 
 //import br.com.lp2.fundatec.TI20LP2APIestacionamento.CodigoAntigo.Endereco;
 
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Enums.TipoCliente;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.TipoCliente;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

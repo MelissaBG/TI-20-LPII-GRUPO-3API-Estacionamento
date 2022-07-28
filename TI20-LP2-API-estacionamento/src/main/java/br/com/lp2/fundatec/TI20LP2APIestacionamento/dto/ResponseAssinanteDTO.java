@@ -1,7 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.dto;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Endereco;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Enums.TipoCliente;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.TipoCliente;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Veiculo;
 import lombok.Data;
 import lombok.Getter;
