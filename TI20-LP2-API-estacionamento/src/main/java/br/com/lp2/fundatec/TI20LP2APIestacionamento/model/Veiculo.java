@@ -2,12 +2,16 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.model;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Enums.TipoVeiculo;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "VEICULO")
+@Getter
+@Setter
+@Table(name = "tbl_veiculo")
 public class Veiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

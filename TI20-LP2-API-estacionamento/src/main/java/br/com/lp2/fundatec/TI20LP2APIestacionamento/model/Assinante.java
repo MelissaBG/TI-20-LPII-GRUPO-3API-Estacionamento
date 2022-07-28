@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Assinante")
+@Table(name = "tbl_assinante")
 public class Assinante {
     @Id
     @NotNull
