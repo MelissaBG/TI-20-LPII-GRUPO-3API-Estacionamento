@@ -22,7 +22,7 @@ public class Assinante {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAssinante;
+    private Long id_Assinante;
 
     @Column(nullable = false)
     private String nome;
@@ -45,10 +45,10 @@ public class Assinante {
     @JoinColumn(name = "enderereco")
     private Endereco endereco;
 
-    public Assinante(Long idAssinante, String nome, String cpf,
+    public Assinante(Long id_Assinante, String nome, String cpf,
                      Veiculo veiculo, BigDecimal creditoDiponivel,
                      TipoCliente tipoCliente, Endereco endereco) {
-        this.idAssinante = idAssinante;
+        this.id_Assinante = getId_Assinante();
         this.nome = nome;
         this.cpf = cpf;
         this.veiculo = veiculo;

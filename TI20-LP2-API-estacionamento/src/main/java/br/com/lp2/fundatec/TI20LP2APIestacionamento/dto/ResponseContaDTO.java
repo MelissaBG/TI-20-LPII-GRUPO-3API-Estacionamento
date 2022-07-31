@@ -1,5 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.dto;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Conta;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.Status;
 import lombok.Data;
 import lombok.Getter;
@@ -17,5 +18,9 @@ public class ResponseContaDTO {
     public ResponseContaDTO(Status status, BigDecimal valor) {
         this.status = status;
         this.valor = valor;
+    }
+
+    public static ResponseContaDTO converterParaResponse(Conta conta) {
+
     }
 }

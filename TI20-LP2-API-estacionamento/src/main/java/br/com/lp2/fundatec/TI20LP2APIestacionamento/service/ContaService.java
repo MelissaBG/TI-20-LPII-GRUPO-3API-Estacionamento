@@ -1,5 +1,7 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.service;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.calculo.CalcularConta;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.RequestContaDTO;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.ResponseContaDTO;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Conta;
@@ -17,24 +19,24 @@ import java.math.BigDecimal;
 public class ContaService {
     @Autowired
     private ContaRepository contaRepository;
-
+    private CalcularConta calcularConta;
     private AssinanteRepository assinanteRepository;
 
     private TarifaService tarifaService;
-    public Conta fecharConta(Conta conta){
-        Conta conta = new Conta();
-        TipoVeiculo tipoVeiculo =conta.getTipoVeiculo() //Duvida: é conta.get?
-        conta.setTipoVeiculo(tipoVeiculo);
-        conta.setValor(conta.getValor());
-        conta.setEntrada(conta.getEntrada());
-        conta.setSaida(conta.getSaida());
-        conta.setStatus(conta.getStatus());
-        conta.setTipoCliente(conta.getTipoCliente());
-        TempoTipoTarifa tempoTipoTarifa = ContaCalcular.calcularPorTempo(conta);
+    public ResponseContaDTO fecharConta(RequestContaDTO requestContaDTO){
+        Conta contaFechada = new Conta();
+        TipoVeiculo tipoVeiculo = requestContaDTO.getTipoVeiculo();
+        contaFechada.setTipoVeiculo(tipoVeiculo);
+        contaFechada.setValor(requestContaDTO.getValor());
+        contaFechada.setEntrada(requestContaDTO.getEntrada());
+        contaFechada.setSaida(requestContaDTO.getSaida());
+        contaFechada.setStatus(requestContaDTO.getStatus());
+        contaFechada.setTipoCliente(requestContaDTO.getTipoCliente());
+        TempoTipoTarifa tempoTipoTarifa = CalcularConta.calcularTarifaComBaseNoTempo(contaFechada);
         Tarifa valorTarifaFinal = tarifaService.findByTipoTarifaAndTipoVeiculo(tempoTipoTarifa, tipoVeiculo);
-        conta.setValor(valorTarifaFinal.getValor());
-        aplicarDesconto(conta);
-        return ContaRepository.save(conta);
+        contaFechada.setValor(valorTarifaFinal.getValor());
+        aplicarDesconto(contaFechada);
+        return ContaRepository.save(contaFechada);
     }
 
     public Conta aplicarDesconto(Conta conta){
@@ -48,7 +50,7 @@ public class ContaService {
         return conta;
     }
     public ResponseContaDTO pagarConta(Long idConta, Long idAssinante){
-        Assinante assinante = assinanteRepository.findAllById(idAssinante).get();
+        Assinante assinante = assinanteRepository.findAllById(idAssinante);
         Conta conta = contaRepository.findById(idConta);
         BigDecimal valor = conta.getValor();
         BigDecimal creditoDisponivel = assinante.getCreditoDiponivel();

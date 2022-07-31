@@ -34,4 +34,3 @@ public class Tarifa {
     @Column(nullable = true, name = "valor")
     private BigDecimal valor;
 }
-}

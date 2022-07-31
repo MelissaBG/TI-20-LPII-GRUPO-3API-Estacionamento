@@ -27,7 +27,7 @@ public class AssinanteService {
         return assinanteRepository.findAll();
     }
     //Salvar um assinante
-    public ResponseAssinanteDTO salvarAssinante(ResponseAssinanteDTO responseAssinanteDTO){
+    public ResponseAssinanteDTO salvarAssinante(Assinante responseAssinanteDTO){
         return ResponseAssinanteDTO.converterParaResponse(assinanteRepository.save(responseAssinanteDTO);
     }
     //Atualizar um assinante
@@ -36,15 +36,15 @@ public class AssinanteService {
         return assinanteRepository.save(assinante);
     }
     //Deletar assinante
-    public void deleteById(Long idAssinante){
-        assinanteRepository.findById(idAssinante);
-        assinanteRepository.deleteById(idAssinante);
+    public void deleteById(Long id_Assinante){
+        assinanteRepository.findById(id_Assinante);
+        assinanteRepository.deleteById(id_Assinante);
     }
-    public Assinante fazerRecarga(Long idAssinante, BigDecimal creditoDisponível){
-        Assinante assinante = assinanteRepository.findAllById(idAssinante);
+    public Assinante fazerRecarga(Long id_Assinante, BigDecimal creditoDisponível){
+        Assinante assinante = assinanteRepository.findAllById(id_Assinante);
         BigDecimal creditoAtual = assinante.getCreditoDiponivel();
         BigDecimal creditoAtualizado = creditoAtual.add(creditoDisponível);
         assinante.setCreditoDiponivel(creditoAtualizado);
-        return ResponseAssinanteDTO.converterParaResponse(assinanteRepository.save());
+        return ResponseAssinanteDTO.converterParaResponse(assinanteRepository.save()).get();
     }
 }

@@ -2,8 +2,10 @@ package br.com.lp2.fundatec.TI20LP2APIestacionamento.dto;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.TempoTipoTarifa;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.TipoVeiculo;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Tarifa;
-import lombok.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -17,13 +19,5 @@ public class RequestTarifaDTO {
     private TempoTipoTarifa tipoTarifa;
     private TipoVeiculo tipoVeiculo;
     private BigDecimal valor;
-
-
-    public void TarifaRequestDTO(Tarifa tarifa) {
-        id = tarifa.getId();
-        tipoTarifa = tarifa.getTipoTarifa();
-        tipoVeiculo = tarifa.getTipoVeiculo();
-        valor = tarifa.getValor();
-    }
 
 }

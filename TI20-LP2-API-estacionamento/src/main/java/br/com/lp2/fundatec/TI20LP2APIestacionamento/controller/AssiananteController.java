@@ -1,5 +1,6 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.controller;
 
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.dto.ResponseAssinanteDTO;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.service.AssinanteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping()
@@ -16,44 +18,44 @@ public class AssiananteController {
     private AssinanteService assinanteService;
 
     public AssiananteController(AssinanteService assinanteService){
+
         this.assinanteService = assinanteService;
     }
     //GET
     //Assinante por Id
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public ResponseEntity<Assinante> findAssinanteById(@PathVariable Long idAssinante){
-        Assinante assinante = assinanteService.findById(idAssinante);
-        return ResponseEntity.ok(assinante);
+    public ResponseEntity<Assinante> findAssinanteById(@PathVariable Long id_Assinante){
+        Optional<Assinante> assinantePorId = assinanteService.findById(id_Assinante);
+        return ResponseEntity.ok(assinantePorId);
     }
     // Todos os assinantes
     @GetMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<Assinante> findAll(){
-        Iterable <Assinante> assinantes = assinanteService.findAll();
-        //Duvida de o que vem a seguir.
-        List<Assinante> assinantes =;
-        return ResponseEntity.ok(assinantes);
+    public ResponseEntity<List<Assinante>> findAll() {
+        Iterable<Assinante> assinanteDTO = assinanteService.findAll();
+        return ResponseEntity.ok(assinanteDTO);
+
     }
     //Salva/Cria assinante
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Assinante> salvarAssinante(@RequestBody Assinante assinante){
-        Assinante assinante = assinanteService.salvarAssinante(assinante);
-        return ResponseEntity.ok(assinante);
+        ResponseAssinanteDTO assinanteCriado = assinanteService.salvarAssinante(assinante);
+        return ResponseEntity.ok(assinanteCriado);
     }
     //Atualizo assinante
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Assinante> atualizarAssinante(@RequestBody Assinante assinante){
-        Assinante assinante = assinanteService.atualizarAssinante(assinante);
-        return ResponseEntity.ok(assinante);
+        Assinante assinanteAtualizado = assinanteService.atualizarAssinante(assinante);
+        return ResponseEntity.ok(assinanteAtualizado);
     }
     //Deletar Assinante
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete (@PathVariable Integer id) {
-        service.delete(idAssinante);
+    public void delete (@PathVariable Long id_Assinante) {
+        assinanteService.deleteById(id_Assinante);
     }
 
 

@@ -1,8 +1,8 @@
 package br.com.lp2.fundatec.TI20LP2APIestacionamento.dto;
 
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Endereco;
-import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.TipoCliente;
 import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Veiculo;
+import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.enums.
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,9 +20,7 @@ public class RequestAssinanteDTO {
     private BigDecimal creditoDisponivel;
     private TipoCliente tipoCliente;
 
-    public RequestAssinanteDTO(Long id, String nome, String cpf,
-                               Endereco endereco, Veiculo veiculo,
-                               BigDecimal creditoDisponivel, TipoCliente tipoCliente) {
+    public RequestAssinanteDTO(Long id, String nome, String cpf, Endereco endereco, Veiculo veiculo, BigDecimal creditoDisponivel, TipoCliente tipoCliente) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;

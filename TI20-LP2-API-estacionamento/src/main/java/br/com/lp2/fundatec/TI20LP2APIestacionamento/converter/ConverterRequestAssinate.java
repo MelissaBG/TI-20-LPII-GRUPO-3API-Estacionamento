@@ -6,7 +6,7 @@ import br.com.lp2.fundatec.TI20LP2APIestacionamento.model.Assinante;
 public class ConverterRequestAssinate {
     public static RequestAssinanteDTO converterParaDTO(Assinante assinante){
         RequestAssinanteDTO requestAssinanteDTO = new RequestAssinanteDTO();
-        requestAssinanteDTO.setId(assinante.getIdAssinante());
+        requestAssinanteDTO.setId(assinante.getId_Assinante());
         requestAssinanteDTO.setNome(assinante.getNome());
         requestAssinanteDTO.setCpf(assinante.getCpf());
         requestAssinanteDTO.setEndereco(assinante.getEndereco());

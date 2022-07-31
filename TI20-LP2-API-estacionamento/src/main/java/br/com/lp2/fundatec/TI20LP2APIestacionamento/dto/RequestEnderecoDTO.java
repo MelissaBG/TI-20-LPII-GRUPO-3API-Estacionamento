@@ -12,4 +12,11 @@ public class RequestEnderecoDTO {
     private String logradouro;
     private String numero;
     private String cep;
+
+    public RequestEnderecoDTO(Long idEndereco, String logradouro, String numero, String cep) {
+        this.idEndereco = idEndereco;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.cep = cep;
+    }
 }

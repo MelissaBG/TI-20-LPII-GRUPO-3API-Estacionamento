@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AssinanteRepository extends JpaRepository<Assinante, Long> {
+    Assinante findAllById(Long id_assinante);
 }
